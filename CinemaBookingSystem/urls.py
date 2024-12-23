@@ -16,13 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.http import HttpResponse
-
-def homepage(request):
-    return HttpResponse("Welcome to the Cinema Booking System API!")
 
 urlpatterns = [
-    path('', homepage),  # Add this at the end 
     path('admin/', admin.site.urls),
-    path('api/', include('cinema.urls')),
+    path('api/', include('cinema.urls')),  # Make sure this points to the correct app URLs
 ]
+

@@ -1,31 +1,25 @@
 from rest_framework import serializers
-from .models import Movie, CinemaHall, Show, Customer, Booking
-
-# Purpose: Transform models into JSON and handle validation.
+from .models import Movie, Showtime, Customer, Seat, Booking
 
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
         fields = '__all__'
 
-
-class CinemaHallSerializer(serializers.ModelSerializer):
+class ShowtimeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CinemaHall
+        model = Showtime
         fields = '__all__'
-
-
-class ShowSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Show
-        fields = '__all__'
-
 
 class CustomerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Customer
         fields = '__all__'
 
+class SeatSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Seat
+        fields = '__all__'
 
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:

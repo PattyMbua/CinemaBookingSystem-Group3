@@ -1,14 +1,14 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import MovieViewSet, CinemaHallViewSet, ShowViewSet, CustomerViewSet, BookingViewSet
+from .views import MovieViewSet, ShowtimeViewSet, CustomerViewSet, SeatViewSet, BookingViewSet
 
 router = DefaultRouter()
-router.register('movies', MovieViewSet)
-router.register('cinema-halls', CinemaHallViewSet)
-router.register('shows', ShowViewSet)
-router.register('customers', CustomerViewSet)
-router.register('bookings', BookingViewSet)
+router.register(r'movies', MovieViewSet)
+router.register(r'showtimes', ShowtimeViewSet)
+router.register(r'customers', CustomerViewSet)
+router.register(r'seats', SeatViewSet)
+router.register(r'bookings', BookingViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
 ]
